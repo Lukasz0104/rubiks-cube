@@ -334,18 +334,13 @@ class Cube:
         self.DFL = self.state[45] + self.state[24] + self.state[17]
         self.DBL = self.state[51] + self.state[44] + self.state[15]
     
-    @staticmethod
-    def reverse(alg):
-        a=""
-        for x in fa(r"[RUFBDLMESxyzruflbd][2']?",alg)[::-1]:
-            if "2" in x:
-                a += x+' '
-            elif "'" in x:
-                a += x[0]+' '
-            else:
-                a += x+"' "   
-        return a
-
-
-cube = Cube("xR2FRF'RU2Rw'URwU2x'")
-print(cube.UR)
+def reverse(alg):
+    a=""
+    for x in fa(r"[RUFBDLMESxyzruflbd][2']?",alg)[::-1]:
+        if "2" in x:
+            a += x+' '
+        elif "'" in x:
+            a += x[0]+' '
+        else:
+            a += x+"' "   
+    return a
