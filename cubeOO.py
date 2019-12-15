@@ -336,6 +336,7 @@ class Cube:
     
 def reverse(alg):
     a=""
+    alg = alg.replace('Rw','r').replace('Lw','l').replace('Uw','u').replace('Bw','b').replace('Fw','f').replace('Dw','d')
     for x in fa(r"[RUFBDLMESxyzruflbd][2']?",alg)[::-1]:
         if "2" in x:
             a += x+' '
@@ -343,4 +344,4 @@ def reverse(alg):
             a += x[0]+' '
         else:
             a += x+"' "   
-    return a
+    return a.replace('r','Rw').replace('l','Lw').replace('u','Uw').replace('b','Bw').replace('f','Fw').replace('d','Dw')
