@@ -343,5 +343,5 @@ def reverse(alg):
         elif "'" in x:
             a += x[0]+' '
         else:
-            a += x+"' "   
+            a += x+"' "
     return a.replace('r','Rw').replace('l','Lw').replace('u','Uw').replace('b','Bw').replace('f','Fw').replace('d','Dw')
