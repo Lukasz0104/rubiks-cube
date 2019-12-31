@@ -345,3 +345,12 @@ def reverse(alg):
         else:
             a += x+"' "
     return a.replace('r','Rw').replace('l','Lw').replace('u','Uw').replace('b','Bw').replace('f','Fw').replace('d','Dw')
+
+def algExpand(x):
+    x=x.replace("[","").replace("]","")
+    if ":" in  x:
+        return x[:x.index(":")]+algExpand(x[1+x.index(":"):])+reverse(x[:x.index(":")])
+    elif "," in x:
+        return x[:x.index(",")]+x[1+x.index(","):]+reverse(x[:x.index(",")])+reverse(x[1+x.index(","):])
+    else: 
+        return x
